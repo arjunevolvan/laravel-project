@@ -8,7 +8,7 @@
   </div>
 @endif
 <h3>Restaurent List</h3>
-<table class="table">
+<table class="table table-striped table-hover">
     <thead>
         <tr>
             <th scope="col">ID</th>

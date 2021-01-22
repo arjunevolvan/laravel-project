@@ -17,7 +17,7 @@
             <input type="text" class="form-control" name="address" placeholder="Enter Address">
           </div>
        
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">Add Rest</button>
       </form>
 </div>
 

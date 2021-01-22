@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\restorent;
+use App\Models\User;
+
 
 class RestoController extends Controller
 {
@@ -23,9 +25,10 @@ class RestoController extends Controller
         $request->session()->flash('status','Restaurent added successfully');
         return redirect('list');
     }
-    function delete($id){
+    function delete(Request $request, $id){
         $data = restorent::find($id);
         $data->delete();
+        $request->session()->flash('status','Restaurent Deleted successfully');
         return redirect('list');
     }
 
@@ -39,6 +42,7 @@ class RestoController extends Controller
         $data->email = $request->email;
         $data->address = $request->address;
         $data->save();
+        $request->session()->flash('status','Restaurent Update successfully');
         return redirect('list');
     }
 }
