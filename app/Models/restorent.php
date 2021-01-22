@@ -7,5 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class restorent extends Model
 {
+
     use HasFactory;
+    protected $fillable = [
+        'name',
+        'email',
+        'address'
+    ];
 }

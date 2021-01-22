@@ -20,3 +20,9 @@ Route::get('/', function () {
 Route::view('/home','home');
 Route::get('/',[RestoController::class,'index']);
 Route::get('/list',[RestoController::class,'list']);
+Route::view('add','add');
+Route::post('/add',[RestoController::class,'add']);
+Route::get('/delete/{id}',[RestoController::class,'delete']);
+Route::get('/edit/{id}',[RestoController::class,'edit']);
+Route::post('/edit/{id}',[RestoController::class,'update']);
+
