@@ -18,6 +18,7 @@ class RegisterController extends Controller
         $data->email = $request->input('email');
         $data->password = bcrypt($password);
         $data->save();
+        $request->session()->flash('status','Registered Successfully');
         return redirect('register');
     }
 }

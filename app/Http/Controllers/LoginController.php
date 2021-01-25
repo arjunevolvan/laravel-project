@@ -7,8 +7,9 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(){
+    public function login(Request $request){
         return view('login');
+        
     }
     public function auth(Request $request){
         $request->validate([
@@ -21,4 +22,12 @@ class LoginController extends Controller
         }
 
     }
+    public function logout(Request $request)
+{
+    Auth::logout();
+
+    $request->session()->flush();
+
+    return redirect('login');
+}
 }

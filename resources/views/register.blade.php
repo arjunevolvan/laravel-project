@@ -1,6 +1,12 @@
 @extends('layout')
 
 @section('content')
+@if(Session()->get('status'))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{Session()->get('status')}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+@endif
 <div class="container col-sm-6">
   <h2>Register</h2>
     <form method="post" action="/register">
