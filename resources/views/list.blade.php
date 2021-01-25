@@ -2,13 +2,11 @@
 
 @section('content')
 
-
-
-@if(Session()->get('status'))
-<div class="alert alert-success alert-dismissible fade show" role="alert">
-    {{Session()->get('status')}}
-    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-  </div>
+@if ($message = Session::get('success'))
+<div class="alert alert-success alert-block">
+    <button type="button" class="close" data-dismiss="alert">×</button>    
+    <strong>{{$message}}</strong>
+</div>
 @endif
 <button class="float-left" href="{{ route('logout') }}"
          onclick="event.preventDefault();
@@ -40,8 +38,6 @@
         <td>
             <a href="/delete/{{$list->id}}" class="btn btn-danger">Delete</i></a>
             <a href="/edit/{{$list->id}}" class="btn btn-success">Edit</i></a>
-
-
         </td>
     </tr>  
     @endforeach

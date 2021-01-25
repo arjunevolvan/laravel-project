@@ -42,7 +42,8 @@ class RestoController extends Controller
         $data->email = $request->email;
         $data->address = $request->address;
         $data->save();
-        $request->session()->flash('status','Restaurent Update successfully');
-        return redirect('list');
+         //$request->session()->flash('status','Restaurent Update successfully');
+        return redirect('list')->with('success','Update successfully');
+                       
     }
 }

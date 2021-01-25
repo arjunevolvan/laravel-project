@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use auth;
+// use auth;
 use App\Http\Controllers\RestoController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\LoginController;
@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
 
 Route::get('/home',[RestoController::class,'index']);
-Route::get('/list',[RestoController::class,'list']);
+Route::get('/list',[RestoController::class,'list'])->name('list');
 Route::view('add','add');
 Route::post('/add',[RestoController::class,'add']);
 Route::get('/delete/{id}',[RestoController::class,'delete']);
